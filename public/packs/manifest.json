@@ -1,0 +1,64 @@
+{
+  "application.js": "/packs/js/application-9afcbb5693aa87623e69.js",
+  "application.js.map": "/packs/js/application-9afcbb5693aa87623e69.js.map",
+  "components/Header.js": "/packs/js/components/Header-be1ecbd037fd48ca3caf.js",
+  "components/Header.js.map": "/packs/js/components/Header-be1ecbd037fd48ca3caf.js.map",
+  "components/Product.js": "/packs/js/components/Product-d37818f69b98f73384dd.js",
+  "components/Product.js.map": "/packs/js/components/Product-d37818f69b98f73384dd.js.map",
+  "components/Properties.js": "/packs/js/components/Properties-2de53dbd80b81c70011f.js",
+  "components/Properties.js.map": "/packs/js/components/Properties-2de53dbd80b81c70011f.js.map",
+  "components/app.js": "/packs/js/components/app-8050badc5d518f151f8b.js",
+  "components/app.js.map": "/packs/js/components/app-8050badc5d518f151f8b.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-9afcbb5693aa87623e69.js"
+      ],
+      "js.map": [
+        "/packs/js/application-9afcbb5693aa87623e69.js.map"
+      ]
+    },
+    "components/app": {
+      "js": [
+        "/packs/js/components/app-8050badc5d518f151f8b.js"
+      ],
+      "js.map": [
+        "/packs/js/components/app-8050badc5d518f151f8b.js.map"
+      ]
+    },
+    "components/Header": {
+      "js": [
+        "/packs/js/components/Header-be1ecbd037fd48ca3caf.js"
+      ],
+      "js.map": [
+        "/packs/js/components/Header-be1ecbd037fd48ca3caf.js.map"
+      ]
+    },
+    "components/Product": {
+      "js": [
+        "/packs/js/components/Product-d37818f69b98f73384dd.js"
+      ],
+      "js.map": [
+        "/packs/js/components/Product-d37818f69b98f73384dd.js.map"
+      ]
+    },
+    "components/Properties": {
+      "js": [
+        "/packs/js/components/Properties-2de53dbd80b81c70011f.js"
+      ],
+      "js.map": [
+        "/packs/js/components/Properties-2de53dbd80b81c70011f.js.map"
+      ]
+    },
+    "index": {
+      "js": [
+        "/packs/js/index-0f99dd3dd845a2dab768.js"
+      ],
+      "js.map": [
+        "/packs/js/index-0f99dd3dd845a2dab768.js.map"
+      ]
+    }
+  },
+  "index.js": "/packs/js/index-0f99dd3dd845a2dab768.js",
+  "index.js.map": "/packs/js/index-0f99dd3dd845a2dab768.js.map"
+}
