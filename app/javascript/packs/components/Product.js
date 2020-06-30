@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import Properties from './properties';
+// import Properties from './properties';
 
 class Product extends Component {
 
     state = {
-        products: [
-            {
-                name: '',
-                upc:'',
-                available_on:''
-            }
-        ]
-        
+
+        name: '',
+        upc: '',
+        available_on: ''
     }
 
     handleValueChange = (e) => {
@@ -80,7 +76,7 @@ class Product extends Component {
                     />
                 </label>
 
-                <Properties />
+                {/* <Properties /> */}
 
                 <input
                     type="submit"
