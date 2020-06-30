@@ -7,14 +7,16 @@ class App extends Component {
     state = {
         products: [
             {
-                name:'phone',
-                upc: 1234567890,
-                available_on: '07/17/2021'
+                name:'',
+                upc: '',
+                available_on: '',
+                propertyName: '',
+                propertyValue: ''                
             }
         ]
     };
 
-    handleAddProduct = (name, upc, available_on) => {
+    handleAddProduct = (name, upc, available_on, propertyName, propertyValue) => {
         this.setState( prevState => {
             return {
                 products: [
@@ -22,7 +24,9 @@ class App extends Component {
                 {
                     name,
                     upc,
-                    available_on
+                    available_on,
+                    propertyName, 
+                    propertyValue
                 }
                 ]
             }
