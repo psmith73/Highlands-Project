@@ -1,93 +1,43 @@
 import React, { Component } from 'react';
 import Header from './Header';
-// import Property from './property';
-// import ProductProperty from './productproperty';
+import Properties from './Properties';
+
 
 class Product extends Component {
 
     state = {
-        products: {        
-            name: {
-                value: ''
-            },
-            upc: {
-                value: ''
-            },
-            available_on: {
-                value: ''
-            },
-            propertyName:{
-                value: ''
-            },
-            propertyValue:{
-                value: ''
-            }        
-        }
-       
+        name: '',
+        upc: '',
+        available_on: '',
+        propertyName: '',
+        propertyValue: ''         
     }
 
     handleValueChange = (e) => {
-
-        const name = e.target.name;
-        const upc = e.target.upc;
-        const available = e.target.available_on;
-        const propertyName = e.target.propertyName;
-        const propertyValue = e.target.propertyValue;
-        const value = e.target.value;
-
-        this.setState({
-            products: {
-                ...this.state.products,
-                [name]: {
-                    ...this.state.products[name],
-                    value
-                },
-                [upc]: {
-                    ...this.state.products[upc],
-                    value
-                },
-                [available]: {
-                    ...this.state.products[available],
-                    value
-                },
-                [propertyName]: {
-                    ...this.state.products[propertyName],
-                    value
-                },
-                [propertyValue]: {
-                    ...this.state.products[propertyValue],
-                    value
-                }
-            }  
-        })
+        const input = e.target;
+        const name = input.name;
+        const value = input.type ===  'checkbox' ? input.checked : input.value;
+        this.setState({ [name]: value });
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addProduct(this.state.products.name.value, this.state.products.upc.value, this.state.products.available_on.value, this.state.products.propertyName.value, this.state.products.propertyValue.value);
+        this.props.addProduct(this.state.name, this.state.upc, this.state.available_on, this.state.propertyName, this.state.propertyValue);
         this.setState({
-            products: {        
-                name: {
-                    value: ''
-                },
-                upc: {
-                    value: ''
-                },
-                available_on: {
-                    value: ''
-                },
-                propertyName: {
-                    value: ''
-                },
-                propertyValue:{
-                    value: ''
-                }        
-            }
-
+            name: '',
+            upc: '',
+            available_on: '',
+            propertyName: '',
+            propertyValue: ''  
         })
     }
 
+    handleAddProperties() {   
+        
+    }
+
     render() {
+
         return(
             <form onSubmit={this.handleSubmit}>
                 <label>
@@ -97,7 +47,7 @@ class Product extends Component {
                         type="text"
                         min='0'
                         max='1024'
-                        value={this.state.products.name.value}
+                        value={this.state.name}
                         onChange={this.handleValueChange}            
                     />
                 </label>
@@ -107,9 +57,9 @@ class Product extends Component {
                     <input
                         name="upc"
                         type="number"
-                        minCharacters='10'
-                        maxCharacters= '13'
-                        value={this.state.products.upc.value}
+                        minLength='10'
+                        maxLength= '13'
+                        value={this.state.upc}
                         onChange={this.handleValueChange}
                     />
                 </label>
@@ -119,7 +69,7 @@ class Product extends Component {
                     <input
                         name="available_on"
                         type="date"
-                        value={this.state.products.available_on.value}
+                        value={this.state.available_on}
                         onChange={this.handleValueChange}
                         placeholder="mm/dd/yyyy"
                     />
@@ -129,33 +79,41 @@ class Product extends Component {
                 title="Properties"
                 />
 
-                <label>
-                    Property Name
-                    <input
-                        name="propertyName"
-                        type="text"
-                        value={this.state.products.propertyName.value}
-                        onChange={this.handleValueChange}
-                    />
-                </label>
+                <div className="properties">
+                    <label>
+                        Property Name
+                        <input
+                            name="propertyName"
+                            type="text"
+                            value={this.state.valuePropName}
+                            onChange={this.handleValueChange}
+                        />
+                    </label>
 
-                <label>
-                    Property Value
-                    <input
-                        name="propertyValue"
-                        type="text"
-                        value={this.state.products.propertyValue.value}
-                        onChange={this.handleValueChange}
-                    />
-                </label>
+                    <label>
+                        Property Value
+                        <input
+                            name="propertyValue"
+                            type="text"
+                            value={this.state.valuePropValue}
+                            onChange={this.handleValueChange}
+                        />
+                    </label>
+                </div>
+                
 
-                {/* <Property /> */}
+                {/* <Properties 
+                    // handleAddProperties={this.handleAddProperties()} 
+                    propertyName={this.state.propertyName}
+                    propertyValue={this.state.propertyValue}
+                    handleValueChange={this.handleValueChange}
+                /> */}
 
-                {/* <ProductProperty /> */}
                 <div className="buttons">
                     <input
                         type="button"
                         value="Add More Properties"
+                        onClick={ () => this.handleAddProperties() }
                     />
 
                     <input
@@ -166,7 +124,7 @@ class Product extends Component {
                
             </form>
         );
-    }
+    };
 }
 
 export default Product;
