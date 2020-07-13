@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version - 2.6.3
 
-Things you may want to cover:
+* Rails version - 6.0.3.2
 
-* Ruby version
+* System dependencies - Webpacker - 4.2.2, Bootstrap, PostgreSQL, Babel(preset - React) - 7.10.4 
 
-* System dependencies
+* Install
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Database Creation
