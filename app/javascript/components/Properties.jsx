@@ -1,42 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Property from './Property';
 
-class Properties extends Component {
+const Properties = (props) => {
+    const property = props.properties;
 
-    onChange = (e) => {
-        const newProperty = {...this.props.property};
-        newProperty[e.target.name] = e.target.value;
-        this.props.handleChange(this.props.index, newProperty);
+    if (property.length === 0) {
+    return <h3>No Properties Added</h3>;
+    } else {
+    
+        return (
+            <div className="properties_container">
+            <h3>Properties Added</h3>
+            {property.map((property, index) => (
+                <Property 
+                key={index.toString()} 
+                property={property} 
+                />
+            ))}
+            </div>
+        );
     }
-
-    render() {
-        return(
-                <div className="properties">
-                     <div className="form-group">
-                        <label htmlFor="productPropertyName">Property Name</label>
-                        <input
-                        type="text"
-                        name="property_name"
-                        id="productPropertyName"
-                        className="form-control"
-                        required
-                        onChange={this.onChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="productPropertyValue">Property Value</label>
-                        <input
-                        type="text"
-                        name="property_value"
-                        id="productPropertyValue"
-                        className="form-control"
-                        required
-                        onChange={this.onChange}
-                        />
-                    </div>
-                </div>
-            )
-    }    
-}
+};
 
 
 

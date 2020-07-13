@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-      get 'products/index'
-      post 'products/create'
-      get '/show/:id', to: 'products#show'
-      delete '/destroy/:id', to: 'products#destroy'
-    end
-  end
-  root 'homepage#index'
-  get '/*path' => 'homepage#index'
+  get 'pages/index'
+  root 'pages#index'
+  match '/', to: 'pages#index', via: :all
+  match '/products', to: 'pages#index', via: :all
+  match '/send_data' => 'send_data#save', via: :post
+  match '/get_data' => 'get_data#pull', via: :get
+  match '/search' => 'search#search', via: :get
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
